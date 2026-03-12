@@ -1,19 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: #2c3e50;
+body {
+    /* --- Fonturi și fundal --- */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern, curat */
+    background-color: #f0f8ff; /* Un albastru foarte deschis, relaxant */
+    color: #333; /* Culoare text principal */
+    line-height: 1.6;
 }
 
-p {
-    color: #34495e;
+.container {
+    width: 90%;
+    max-width: 1000px; /* Previne site-ul să fie prea lat pe ecrane mari */
+    margin: 0 auto; /* Centrează conținutul */
+    padding: 0 20px;
+}
+
+header {
+    background-color: #008080; /* Teal - o culoare medicală profesională */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid #005f5f; /* O nuanță mai închisă de teal pentru accent */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header .tagline {
     font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+main {
+    padding: 40px 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #006060;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #008080;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.introducere {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px; /* Colțuri rotunjite */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Efect de umbră discret */
+}
+
+.introducere p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.servicii-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grile responsive */
+    gap: 20px;
+}
+
+.serviciu-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #008080; /* Linie verticală Teal pentru accent */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Efect vizual la trecerea mouse-ului */
+}
+
+.serviciu-item:hover {
+    transform: translateY(-5px); /* Se ridică puțin la hover */
+}
+
+.serviciu-item h3 {
+    color: #008080;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Împinge footer-ul jos dacă e conținut puțin */
+}
+
+footer p {
+    font-size: 0.9rem;
 }
