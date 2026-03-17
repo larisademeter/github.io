@@ -101,3 +101,24 @@ footer {
 footer p {
     font-size: 0.9rem;
 }
+/* Dimensiuni logo */
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px; /* arată bine pe fundaluri deschise */
+  border: 1px solid var(--border);
+  background: #fff;
+}
+.footer-logo .logo-img {
+  border-color: rgba(255,255,255,0.2);
+  background: transparent;
+}
+.hero-media img {
+  max-width: 520px; /* limitează mărimea în HERO */
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
