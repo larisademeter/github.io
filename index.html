@@ -1,84 +1,66 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L.D. Service Medical</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>L.D. Service Medical</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container header-content">
-            <img src="logo.png" alt="L.D. Service Medical"#serviciiServicii</a>
-                <a href="#contact">Contact</a>
-            </nav>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <a href="#despre" class="brand" aria-label="L.D. Service Medical - acasă">
+        <img src="logo.png" alt="Sigla L.D. Service Medical" class="logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Meniu principal">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (fără imagine) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>L.D. Service Medical</h1>
+        <p>Servicii profesionale de întreținere și reparații pentru aparatură medicală.</p>
+        <a href="#contact" class="btn">Contactează-ne</a>
+      </div>
+      <!-- Fără <img> aici, ca să nu mai apară logo mare -->
+    </div>
+  </section>
+
+  <!-- DESPRE -->
+  <section id="despre" class="section">
+    <div class="container">
+      <h2>Despre noi</h2>
+      <p>
+        Suntem specializați în mentenanță, calibrare și reparații pentru aparatură medicală.
+        Oferim servicii rapide și profesionale, adaptate nevoilor fiecărei clinici.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICII -->
+  <section id="servicii" class="section">
+    <div class="container">
+      <h2>Serviciile noastre</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Diagnoză &amp; Reparații</h3>
+          <p>Identificarea rapidă a defecțiunilor și remediere eficientă.</p>
         </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <h1>L.D. Service Medical</h1>
-                <p>Servicii profesionale de întreținere și reparații pentru aparatură medicală.</p>
-                <a href="#contact" class="btn">Contactează-ne</a>
-            </div>
-
-            <img src="logo.png" alt="Service Medical Logo" class="hero-img">
+        <div class="card">
+          <h3>Mentenanță Preventivă</h3>
+          <p>Întreținere periodică pentru prevenirea defectelor majore.</p>
         </div>
-    </section>
 
-    <!-- DESPRE -->
-    <section id="despre" class="section">
-        <div class="container">
-            <h2>Despre noi</h2>
-            <p>
-                Suntem specializați în mentenanță, calibrare și reparații pentru aparatură medicală.
-                Oferim servicii rapide și profesionale, adaptate nevoilor fiecărei clinici.
-            </p>
-        </div>
-    </section>
-
-    <!-- SERVICII -->
-    <section id="servicii" class="section">
-        <div class="container">
-            <h2>Serviciile noastre</h2>
-
-            <div class="grid">
-                <div class="card">
-                    <h3>Diagnoză & Reparații</h3>
-                    <p>Identificarea rapidă a defecțiunilor și remediere eficientă.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Mentenanță Preventivă</h3>
-                    <p>Întreținere periodică pentru prevenirea defectelor majore.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Consultanță Tehnică</h3>
-                    <p>Ajutăm la alegerea, instalarea și configurarea echipamentelor medicale.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p><strong>Email:</strong> contact@exemplu.ro</p>
-            <p><strong>Telefon:</strong> 07xx xxx xxx</p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 L.D. Service Medical</p>
-    </footer>
-
-</body>
-</html>
+        <div class="card">
