@@ -1,16 +1,16 @@
 /* =========================================
-   1. CONFIGURAȚIE & CULORI (VIBRANT MEDICAL)
+   1. PALETĂ NOUĂ: CALDĂ & MEDICALĂ
    ========================================= */
 :root {
-    --primary: #7c3aed;       /* Violet Modern */
-    --secondary: #f43f5e;     /* Roz-Roșu Accent */
-    --accent: #0ea5e9;        /* Albastru de siguranță */
-    --dark: #1e293b;          /* Text principal */
-    --light-bg: #f8fafc;      /* Fundal secțiuni */
+    --primary: #a05cff;       /* Movul tău original, dar mai curat */
+    --secondary: #6ee7b7;     /* Verde mentă/Cyan (în loc de roșu/roz) */
+    --accent: #f0abfc;        /* Roz pal/Lila pentru detalii */
+    --dark: #334155;          /* Gri închis cald (nu negru) */
+    --light-bg: #fafaff;      /* Fundal foarte deschis, ușor violaceu */
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, #7c3aed 0%, #f43f5e 100%);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient: linear-gradient(135deg, #a05cff 0%, #6366f1 100%);
+    --shadow: 0 10px 40px rgba(160, 92, 255, 0.1);
+    --transition: 0.3s ease;
 }
 
 * {
@@ -19,16 +19,11 @@
     box-sizing: border-box;
 }
 
-html { 
-    scroll-behavior: smooth; 
-}
-
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     color: var(--dark);
     background-color: var(--white);
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
 }
 
 .container {
@@ -38,15 +33,14 @@ body {
 }
 
 /* =========================================
-   2. HEADER & NAVIGAȚIE
+   2. HEADER (Logo Mare & Navigație)
    ========================================= */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 0.8rem 0;
+    background: var(--white);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.02);
     z-index: 1000;
 }
 
@@ -57,106 +51,100 @@ header {
 }
 
 .logo { 
-    height: 110px; /* Logo impunător */
+    height: 110px; /* Dimensiunea cerută de tine */
     width: auto;
-    display: block;
 }
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
 }
 
 .main-nav a {
     text-decoration: none;
     color: var(--dark);
     font-weight: 600;
-    transition: var(--transition);
 }
 
-.main-nav a:hover {
-    color: var(--primary);
+/* Buton Contact în dreapta sus */
+.btn-nav-contact {
+    background: var(--gradient);
+    color: white !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(160, 92, 255, 0.2);
 }
 
 .btn-login {
     border: 2px solid var(--primary);
-    padding: 8px 22px;
+    padding: 10px 22px;
     border-radius: 50px;
     color: var(--primary) !important;
 }
 
-.btn-login:hover {
-    background: var(--primary);
-    color: var(--white) !important;
-}
-
-.btn-nav-contact {
-    background: var(--gradient);
-    color: var(--white) !important;
-    padding: 10px 25px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
-}
-
 /* =========================================
-   3. HERO SECTION (PAGINA START)
+   3. HERO (Pagina Start) - FĂRĂ ROȘU
    ========================================= */
 .hero-vibrance {
-    padding: 120px 0;
-    background: linear-gradient(to bottom, #fdfbff, #ffffff);
+    padding: 100px 0;
+    background-color: var(--light-bg);
     text-align: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
     font-weight: 800;
-    margin-bottom: 1.5rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    max-width: 750px;
-    margin: 0 auto 2.5rem;
+    font-size: 1.2rem;
     color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
 .btn-hero {
     display: inline-block;
     padding: 18px 45px;
     background: var(--gradient);
-    color: var(--white);
+    color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
-    transition: var(--transition);
-}
-
-.btn-hero:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 10px 20px rgba(160, 92, 255, 0.2);
 }
 
 /* =========================================
-   4. SERVICII (GRID)
+   4. ECHIPA (Secțiunea care nu ți-a plăcut)
    ========================================= */
-.section { padding: 100px 0; text-align: center; }
-
-h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; }
-
-.divider {
-    width: 60px;
-    height: 4px;
-    background: var(--gradient);
-    margin: 0 auto 3.5rem;
-    border-radius: 10px;
+.about-highlight {
+    background: var(--white); /* Fundal alb curat */
+    padding: 100px 0;
+    text-align: center;
 }
+
+/* Titlul acum este Mov, nu Roșu */
+.about-highlight h2 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about-highlight p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+/* =========================================
+   5. SERVICII (Carduri cu nuanțe de Mov/Mint)
+   ========================================= */
+.section { padding: 80px 0; text-align: center; }
 
 .grid {
     display: grid;
@@ -165,124 +153,77 @@ h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; }
 }
 
 .card {
-    background: var(--white);
-    padding: 50px 35px;
-    border-radius: 30px;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
     box-shadow: var(--shadow);
-    transition: var(--transition);
-    border: 1px solid #f1f5f9;
+    border: 1px solid #f1f1f1;
+    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-}
+.card:hover { transform: translateY(-5px); border-color: var(--secondary); }
 
-.card-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+.card-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
 
-/* Fundaluri subtile pentru carduri */
-.card-accent-1 { background: linear-gradient(180deg, #ffffff, #f5f3ff); }
-.card-accent-2 { background: linear-gradient(180deg, #ffffff, #fff1f2); }
-.card-accent-3 { background: linear-gradient(180deg, #ffffff, #f0f9ff); }
+/* Fundaluri de card - nuanțe de mov și mentă, zero roșu */
+.card-accent-1 { background: #fdfaff; }
+.card-accent-2 { background: #f0fff4; } /* Mentă foarte deschis */
+.card-accent-3 { background: #f5f3ff; }
 
 /* =========================================
-   5. ECHIPA (SECTIUNEA MODIFICATA)
+   6. FORMULAR CONTACT
    ========================================= */
-.about-highlight {
-    background: #f8fafc; /* Fundal gri-albastru foarte deschis */
-    padding: 120px 0;
-    text-align: center;
-    border-top: 1px solid #f1f5f9;
-}
-
-.about-highlight h2 {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    font-weight: 800;
-}
-
-.about-highlight p {
-    font-size: 1.2rem;
-    max-width: 850px;
-    margin: 30px auto 0;
-    color: #475569;
-    line-height: 1.8;
-}
-
-/* =========================================
-   6. CONTACT FORM
-   ========================================= */
-.bg-light { background-color: #f8fafc; }
-
 .form-wrapper {
-    max-width: 650px;
+    max-width: 600px;
     margin: 0 auto;
-    background: var(--white);
-    padding: 50px;
-    border-radius: 35px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    text-align: left;
 }
 
 .subtitle-form {
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 30px;
-    border-left: 5px solid var(--secondary);
-    padding-left: 20px;
-    text-align: left;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--secondary);
+    padding-left: 15px;
 }
-
-.form-group { margin-bottom: 25px; text-align: left; }
-
-.form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--dark); }
 
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 15px 20px;
-    border: 2px solid #e2e8f0;
-    border-radius: 15px;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: #fff;
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+    padding: 14px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    margin-top: 5px;
 }
 
 .btn-full {
     width: 100%;
-    padding: 18px;
+    padding: 16px;
     background: var(--gradient);
-    color: var(--white);
+    color: white;
     border: none;
-    border-radius: 15px;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 1.1rem;
     cursor: pointer;
-    transition: var(--transition);
 }
 
 /* =========================================
-   7. FOOTER & RESPONSIVE
+   7. FOOTER
    ========================================= */
 footer {
-    background: #0f172a;
-    color: var(--white);
-    padding: 60px 0;
+    background: var(--primary); /* Footer mov ca să se lege cu logo-ul */
+    color: white;
+    padding: 40px 0;
     text-align: center;
 }
 
-footer p { opacity: 0.6; font-size: 0.95rem; }
+footer p { opacity: 0.9; }
 
+/* Responsive */
 @media (max-width: 768px) {
     .logo { height: 70px; }
     .main-nav { display: none; }
-    .hero-title { font-size: 2.5rem; }
-    .section { padding: 60px 0; }
-    .form-wrapper { padding: 30px 20px; }
 }
