@@ -1,51 +1,86 @@
-<main class="section bg-light">
-  <div class="container">
-    <div class="form-wrapper">
-      <h2>Solicită Intervenție Tehnică</h2>
-      <p class="subtitle-form">Un tehnician va prelua solicitarea ta în cel mai scurt timp posibil.</p>
-      
-      <form action="#" method="POST" class="contact-form">
-        
-        <div class="form-group">
-          <label for="clinica">Nume Clinică / Cabinet</label>
-          <input type="text" id="clinica" name="clinica" placeholder="Ex: Spitalul Municipal..." required>
-        </div>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicită Intervenție | L.D. Service Medical</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-        <div class="form-group">
-          <label for="sectie">Secție <span class="optional">(opțional)</span></label>
-          <input type="text" id="sectie" name="sectie" placeholder="Ex: Cardiologie, ATI, Primiri Urgențe">
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="L.D. Service Medical" class="logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Acasă</a>
+        <a href="index.html#servicii">Servicii</a>
+        <div class="nav-auth">
+          <a href="login.html" class="btn-login">Log In</a>
+          <a href="contact.html" class="btn-nav-contact">Contact</a>
         </div>
-
-        <div class="form-group">
-          <label for="motiv">Motiv Intervenție</label>
-          <select id="motiv" name="motiv" required>
-            <option value="" disabled selected>Alege motivul...</option>
-            <option value="service">Service (Reparație defect)</option>
-            <option value="mentenanta">Mentenanță periodică (Verificare)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="echipament">Tip Echipament</label>
-          <select id="echipament" name="echipament" required>
-            <option value="" disabled selected>Alege echipamentul...</option>
-            <option value="injectomat">Injectomat</option>
-            <option value="electrocauter">Electrocauter</option>
-            <option value="monitor_triaj">Monitor triaj</option>
-            <option value="infuzomat">Infuzomat</option>
-            <option value="ploscar">Ploscar</option>
-            <option value="instalatie_oxigen">Instalație de oxigen</option>
-            <option value="altul">Altul...</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="mesaj">Detalii suplimentare</label>
-          <textarea id="mesaj" name="mesaj" rows="4" placeholder="Descrieți defectul sau specificați seria aparatului..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-full">Trimite Solicitarea</button>
-      </form>
+      </nav>
     </div>
-  </div>
-</main>
+  </header>
+
+  <main class="section bg-light">
+    <div class="container">
+      <div class="form-wrapper">
+        <h2>Solicită Intervenție Tehnică</h2>
+        <p class="subtitle-form">Un tehnician va prelua solicitarea ta în cel mai scurt timp posibil.</p>
+        
+        <form action="#" method="POST" class="contact-form">
+          
+          <div class="form-group">
+            <label for="clinica">Nume Clinică / Cabinet</label>
+            <input type="text" id="clinica" name="clinica" placeholder="Ex: Spitalul Municipal..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="sectie">Secție <span class="optional">(opțional)</span></label>
+            <input type="text" id="sectie" name="sectie" placeholder="Ex: Cardiologie, ATI, Primiri Urgențe">
+          </div>
+
+          <div class="form-group">
+            <label for="motiv">Motiv Intervenție</label>
+            <select id="motiv" name="motiv" required>
+              <option value="" disabled selected>Alege motivul...</option>
+              <option value="service">Service (Reparație defect)</option>
+              <option value="mentenanta">Mentenanță periodică (Verificare)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="echipament">Tip Echipament</label>
+            <select id="echipament" name="echipament" required>
+              <option value="" disabled selected>Alege echipamentul...</option>
+              <option value="injectomat">Injectomat</option>
+              <option value="electrocauter">Electrocauter</option>
+              <option value="monitor_triaj">Monitor triaj</option>
+              <option value="infuzomat">Infuzomat</option>
+              <option value="ploscar">Ploscar</option>
+              <option value="instalatie_oxigen">Instalație de oxigen</option>
+              <option value="altul">Altul...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mesaj">Detalii suplimentare</label>
+            <textarea id="mesaj" name="mesaj" rows="4" placeholder="Descrieți defectul sau specificați seria aparatului..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-full">Trimite Solicitarea</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 L.D. Service Medical. Partenerul tău în tehnologie medicală.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
