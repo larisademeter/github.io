@@ -1,16 +1,17 @@
 /* =========================================
-   1. PALETĂ NOUĂ: CALDĂ & MEDICALĂ
+   1. PALETĂ VIBRANTĂ & NEON
    ========================================= */
 :root {
-    --primary: #a05cff;       /* Movul tău original, dar mai curat */
-    --secondary: #6ee7b7;     /* Verde mentă/Cyan (în loc de roșu/roz) */
-    --accent: #f0abfc;        /* Roz pal/Lila pentru detalii */
-    --dark: #334155;          /* Gri închis cald (nu negru) */
-    --light-bg: #fafaff;      /* Fundal foarte deschis, ușor violaceu */
+    --primary: #8b5cf6;       /* Mov Electric */
+    --secondary: #ec4899;     /* Roz Neon */
+    --turquoise: #06b6d4;     /* Turcoaz/Cyan */
+    --dark: #1e1b4b;          /* Indigo foarte închis (pentru text) */
+    --light-bg: #f5f3ff;      /* Fundal foarte ușor mov */
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, #a05cff 0%, #6366f1 100%);
-    --shadow: 0 10px 40px rgba(160, 92, 255, 0.1);
-    --transition: 0.3s ease;
+    --grad-vibrant: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
+    --grad-btn: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+    --shadow-vibrant: 0 10px 25px rgba(236, 72, 153, 0.3);
+    --transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 * {
@@ -33,14 +34,14 @@ body {
 }
 
 /* =========================================
-   2. HEADER (Logo Mare & Navigație)
+   2. HEADER & LOGO
    ========================================= */
 header {
     background: var(--white);
-    padding: 1rem 0;
+    padding: 1.2rem 0;
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 30px rgba(139, 92, 246, 0.1);
     z-index: 1000;
 }
 
@@ -51,179 +52,260 @@ header {
 }
 
 .logo { 
-    height: 110px; /* Dimensiunea cerută de tine */
+    height: 110px; 
     width: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
 }
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .main-nav a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
 }
 
-/* Buton Contact în dreapta sus */
-.btn-nav-contact {
-    background: var(--gradient);
-    color: white !important;
-    padding: 12px 28px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(160, 92, 255, 0.2);
+.main-nav a:hover {
+    color: var(--secondary);
 }
 
 .btn-login {
     border: 2px solid var(--primary);
-    padding: 10px 22px;
+    padding: 10px 25px;
     border-radius: 50px;
     color: var(--primary) !important;
 }
 
+.btn-login:hover {
+    background: var(--primary);
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-nav-contact {
+    background: var(--grad-btn);
+    color: white !important;
+    padding: 12px 30px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-vibrant);
+}
+
 /* =========================================
-   3. HERO (Pagina Start) - FĂRĂ ROȘU
+   3. HERO SECTION (Vibrant)
    ========================================= */
 .hero-vibrance {
-    padding: 100px 0;
-    background-color: var(--light-bg);
-    text-align: center;
+    padding: 140px 0;
+    background: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adăugăm un efect de cerc colorat în fundal */
+.hero-vibrance::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: var(--turquoise);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: 0;
 }
 
 .hero-title {
-    font-size: 3rem;
-    color: var(--primary);
+    font-size: 4rem;
+    font-weight: 900;
     margin-bottom: 20px;
-    font-weight: 800;
+    background: var(--grad-vibrant);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: #64748b;
-    max-width: 700px;
+    font-size: 1.3rem;
+    color: var(--dark);
+    max-width: 750px;
     margin: 0 auto 40px;
+    font-weight: 500;
 }
 
 .btn-hero {
     display: inline-block;
-    padding: 18px 45px;
-    background: var(--gradient);
+    padding: 20px 50px;
+    background: var(--grad-btn);
     color: white;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 700;
-    box-shadow: 0 10px 20px rgba(160, 92, 255, 0.2);
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.4);
+    transition: var(--transition);
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px) scale(1.05);
 }
 
 /* =========================================
-   4. ECHIPA (Secțiunea care nu ți-a plăcut)
+   4. ECHIPA & DESPRE (Culori Vii)
    ========================================= */
 .about-highlight {
-    background: var(--white); /* Fundal alb curat */
     padding: 100px 0;
+    background: var(--dark);
+    color: white;
     text-align: center;
 }
 
-/* Titlul acum este Mov, nu Roșu */
 .about-highlight h2 {
-    color: var(--primary);
-    font-size: 2.5rem;
+    color: var(--turquoise);
+    font-size: 3rem;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .about-highlight p {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 800px;
+    font-size: 1.3rem;
+    max-width: 900px;
     margin: 0 auto;
-    line-height: 1.9;
+    line-height: 1.8;
+    color: #e0e7ff;
 }
 
 /* =========================================
-   5. SERVICII (Carduri cu nuanțe de Mov/Mint)
+   5. SERVICII (Carduri Turcoaz & Mov)
    ========================================= */
-.section { padding: 80px 0; text-align: center; }
+.section { padding: 100px 0; text-align: center; }
+
+h2 { font-size: 3rem; font-weight: 800; color: var(--primary); }
+
+.divider {
+    width: 100px;
+    height: 6px;
+    background: var(--grad-vibrant);
+    margin: 20px auto 50px;
+    border-radius: 10px;
+}
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .card {
     background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: var(--shadow);
-    border: 1px solid #f1f1f1;
-    transition: 0.3s;
+    padding: 60px 40px;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+    transition: var(--transition);
 }
 
-.card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+.card:hover {
+    transform: translateY(-15px);
+    border-color: var(--turquoise);
+    box-shadow: 0 30px 60px rgba(6, 182, 212, 0.15);
+}
 
-.card-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+.card-icon { font-size: 4rem; margin-bottom: 25px; display: block; }
+.card h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; }
 
-/* Fundaluri de card - nuanțe de mov și mentă, zero roșu */
-.card-accent-1 { background: #fdfaff; }
-.card-accent-2 { background: #f0fff4; } /* Mentă foarte deschis */
-.card-accent-3 { background: #f5f3ff; }
+/* Fundaluri Carduri */
+.card-accent-1 { background: linear-gradient(to bottom, #ffffff, #f5f3ff); }
+.card-accent-2 { background: linear-gradient(to bottom, #ffffff, #ecfdf5); }
+.card-accent-3 { background: linear-gradient(to bottom, #ffffff, #f0f9ff); }
 
 /* =========================================
-   6. FORMULAR CONTACT
+   6. CONTACT FORM (Vibrant)
    ========================================= */
 .form-wrapper {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: var(--shadow);
+    padding: 60px;
+    border-radius: 40px;
+    box-shadow: 0 30px 70px rgba(139, 92, 246, 0.15);
     text-align: left;
 }
 
 .subtitle-form {
-    color: var(--primary);
-    font-weight: 600;
-    margin-bottom: 25px;
-    border-left: 4px solid var(--secondary);
-    padding-left: 15px;
+    color: var(--secondary);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    border-left: 6px solid var(--turquoise);
+    padding-left: 20px;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1rem;
 }
 
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 14px;
-    border: 2px solid #eee;
-    border-radius: 12px;
-    margin-top: 5px;
+    padding: 16px 20px;
+    border: 2px solid #eef2ff;
+    border-radius: 20px;
+    background: #f8faff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--turquoise);
+    background: white;
+    box-shadow: 0 0 0 5px rgba(6, 182, 212, 0.1);
 }
 
 .btn-full {
     width: 100%;
-    padding: 16px;
-    background: var(--gradient);
+    padding: 20px;
+    background: var(--grad-vibrant);
     color: white;
     border: none;
-    border-radius: 12px;
-    font-weight: 700;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.3rem;
     cursor: pointer;
+    box-shadow: var(--shadow-vibrant);
+    transition: var(--transition);
+}
+
+.btn-full:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
 /* =========================================
    7. FOOTER
    ========================================= */
 footer {
-    background: var(--primary); /* Footer mov ca să se lege cu logo-ul */
+    background: var(--grad-vibrant);
     color: white;
-    padding: 40px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
-footer p { opacity: 0.9; }
+footer p { font-weight: 700; letter-spacing: 1px; }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .logo { height: 70px; }
+    .hero-title { font-size: 2.8rem; }
+    .logo { height: 80px; }
     .main-nav { display: none; }
 }
