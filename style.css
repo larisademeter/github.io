@@ -1,16 +1,16 @@
 /* =========================================
-   1. PALETĂ REVIZUITĂ & VARIABILE
+   1. VARIABILE & RESET
    ========================================= */
 :root {
-    --primary: #8b5cf6;
-    --secondary: #ec4899;
-    --turquoise: #06b6d4;
-    --header-bg: #f5f3ff;
-    --body-bg: #ffffff;
+    --primary: #8b5cf6;       /* Mov */
+    --secondary: #ec4899;     /* Roz */
+    --turquoise: #06b6d4;     /* Turcoaz */
+    --header-bg: #f5f3ff;     /* Lavandă Pastel */
     --dark-text: #1e1b4b;
     --light-text: #64748b;
+    --white: #ffffff;
     --grad-vibrant: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
     --transition: 0.3s ease;
 }
 
@@ -19,23 +19,23 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     color: var(--dark-text);
-    background-color: var(--body-bg);
+    background-color: var(--white);
     line-height: 1.6;
-    overflow-x: hidden; /* Previne scroll-ul orizontal pe mobil */
+    overflow-x: hidden;
 }
 
-.container { width: 90%; max-width: 1100px; margin: auto; }
+.container { width: 90%; max-width: 1150px; margin: auto; }
 
 /* =========================================
-   2. HEADER & NAVIGATION (FIX PENTRU MOBIL)
+   2. HEADER & NAV (PASTEL & COMPACT)
    ========================================= */
 header {
     background: var(--header-bg);
-    padding: 0.5rem 0;
+    padding: 10px 0;
     position: sticky;
     top: 0;
-    z-index: 1100;
-    box-shadow: var(--shadow-soft);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 .header-content {
@@ -45,12 +45,41 @@ header {
 }
 
 .logo { 
-    height: 65px; 
+    height: 90px; /* Logo mare cerut */
     width: auto;
-    z-index: 1200;
+    display: block;
 }
 
-/* BUTON HAMBURGER (Apare doar pe mobil) */
+.main-nav { display: flex; align-items: center; gap: 20px; }
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.main-nav a:hover { color: var(--secondary); }
+
+.nav-auth { display: flex; align-items: center; gap: 15px; }
+
+.btn-login {
+    border: 2px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+.btn-nav-contact {
+    background: var(--grad-vibrant);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+}
+
+/* BUTON MOBIL (HAMBURGER) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -58,12 +87,9 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1200;
-    padding: 10px;
 }
 
-.menu-toggle span {
-    display: block;
+.menu-toggle .bar {
     width: 25px;
     height: 3px;
     background: var(--primary);
@@ -71,99 +97,113 @@ header {
     transition: 0.3s;
 }
 
-/* NAVIGAȚIE DESKTOP */
-.main-nav { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-.nav-auth { display: flex; align-items: center; gap: 15px; }
-
-.btn-nav-contact {
-    background: var(--grad-vibrant);
-    color: white !important;
-    padding: 8px 20px;
-    border-radius: 50px;
-}
-
 /* =========================================
-   3. HERO & CONTENT
+   3. HERO SECTION (BUTON COLORAT)
    ========================================= */
 .hero-vibrance {
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
+    background: white;
 }
 
 .hero-title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    margin-bottom: 15px;
     background: var(--grad-vibrant);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     max-width: 800px;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
     color: var(--light-text);
 }
 
-/* =========================================
-   4. FORMULAR CONTACT (FIX PENTRU MOBIL)
-   ========================================= */
-.form-wrapper {
-    max-width: 650px;
-    margin: 20px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.form-group { margin-bottom: 20px; text-align: left; }
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #f1f5f9;
-    border-radius: 12px;
-    font-size: 16px; /* Previne auto-zoom pe iPhone */
-}
-
-.btn-full {
-    width: 100%;
-    padding: 15px;
+.btn-hero {
+    display: inline-block;
+    padding: 18px 45px;
     background: var(--grad-vibrant);
-    color: white;
-    border: none;
+    color: white !important;
+    text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
-    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    transition: var(--transition);
+}
+
+.btn-hero:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4); }
+
+/* =========================================
+   4. SERVICII (CĂSUȚE/CARDURI)
+   ========================================= */
+.section { padding: 80px 0; text-align: center; }
+
+h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 0 auto 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 45px 30px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--turquoise); 
+}
+
+.card-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+.card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
+.card p { font-size: 1rem; color: var(--light-text); }
+
+/* Accentări subtile fundal carduri */
+.card-accent-1 { background: linear-gradient(to bottom, #ffffff, #fbfaff); }
+.card-accent-2 { background: linear-gradient(to bottom, #ffffff, #fdf2f8); }
+.card-accent-3 { background: linear-gradient(to bottom, #ffffff, #f0fdfa); }
+
+/* =========================================
+   5. ECHIPA & FOOTER
+   ========================================= */
+.about-highlight { background: #fdfbff; }
+.about-highlight h2 { background: var(--grad-vibrant); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+footer {
+    background: var(--dark-text);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
 }
 
 /* =========================================
-   5. RESPONSIVE DESIGN (REPARĂ IMAGINILE TALE)
+   6. RESPONSIVE (PENTRU TELEFON)
    ========================================= */
 @media (max-width: 768px) {
-    /* LOGO MAI MARE PE MOBIL */
-    .logo { height: 75px; }
+    .logo { height: 75px; } /* Logo vizibil pe mobil */
+    .hero-title { font-size: 2.2rem; }
+    
+    .menu-toggle { display: flex; } /* Apare hamburgerul */
 
-    /* AFIȘEAZĂ HAMBURGER */
-    .menu-toggle { display: flex; }
-
-    /* MENIUL DEVINE OVERLAY */
     .main-nav {
         position: fixed;
         top: 0;
@@ -174,39 +214,15 @@ header {
         flex-direction: column;
         justify-content: center;
         transition: 0.4s;
-        z-index: 1100;
+        z-index: 1050;
     }
 
     .main-nav.active { right: 0; }
-
-    .main-nav a { font-size: 1.2rem; margin-bottom: 20px; }
-
     .nav-auth { flex-direction: column; width: 80%; }
-
-    /* FIX FORMULAR CONTACT PE MOBIL */
-    .form-wrapper {
-        padding: 25px 15px;
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: none;
-    }
-
-    .form-wrapper h2 { font-size: 1.8rem; text-align: center; }
-
-    .hero-title { font-size: 2rem; }
-    
-    .section { padding: 40px 0; }
+    .btn-nav-contact, .btn-login { width: 100%; text-align: center; }
 }
 
-/* ANIMATIE HAMBURGER */
-.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-footer {
-    background: var(--dark-text);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 0.85rem;
-}
+/* Animație Hamburger */
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
