@@ -59,7 +59,7 @@ header {
 }
 
 .logo { 
-    height: 90px; /* Dimensiune generoasă pentru lizibilitate */
+    height: 90px; /* Logo mare pentru lizibilitate */
     width: auto;
     display: block;
     transition: var(--transition);
@@ -96,14 +96,30 @@ header {
     padding: 8px 20px;
     border-radius: 50px;
     color: var(--primary) !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
 }
 
-.btn-nav-contact {
+/* BUTOANELE VIBRANTE (CONTACT ȘI ACASĂ) */
+.btn-nav-contact, .btn-nav-home {
     background: var(--grad-vibrant);
     color: white !important;
     padding: 10px 25px;
     border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
     box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-nav-contact:hover, .btn-nav-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+    filter: brightness(1.1);
 }
 
 /* BUTON MOBIL (HAMBURGER) */
@@ -215,7 +231,6 @@ h2 {
 .card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
 .card p { font-size: 1rem; color: var(--light-text); }
 
-/* Accentări subtile fundal carduri */
 .card-accent-1 { background: linear-gradient(180deg, #ffffff, #fbfaff); }
 .card-accent-2 { background: linear-gradient(180deg, #ffffff, #fdf2f8); }
 .card-accent-3 { background: linear-gradient(180deg, #ffffff, #f0fdfa); }
@@ -264,7 +279,7 @@ h2 {
     text-align: left; 
 }
 
-/* SPAȚIEREA CERUTĂ SUB LABEL */
+/* SPAȚIERE SUB LABEL */
 .form-group label {
     display: block;
     margin-bottom: 12px; 
@@ -282,7 +297,7 @@ h2 {
     border-radius: 15px;
     background-color: #f8faff;
     font-family: inherit;
-    font-size: 16px; /* Previne zoom-ul pe iOS */
+    font-size: 16px;
     transition: var(--transition);
 }
 
@@ -316,22 +331,21 @@ h2 {
     box-shadow: var(--shadow-vibrant);
 }
 
-.btn-full:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
 /* =========================================
    6. ECHIPA & FOOTER
    ========================================= */
 .about-highlight { 
     background: #fdfbff; 
+    padding: 80px 0;
+    text-align: center;
 }
 
 .about-highlight h2 { 
     background: var(--grad-vibrant); 
     -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -347,9 +361,7 @@ footer {
    ========================================= */
 @media (max-width: 768px) {
     .logo { height: 75px; }
-    
     .hero-title { font-size: 2.2rem; }
-    
     .menu-toggle { display: flex; }
 
     .main-nav {
@@ -366,25 +378,14 @@ footer {
     }
 
     .main-nav.active { right: 0; }
-    
-    .nav-auth { 
-        flex-direction: column; 
-        width: 80%; 
-        margin-top: 20px;
-    }
-    
-    .btn-nav-contact, .btn-login { 
-        width: 100%; 
-        text-align: center; 
-    }
+    .nav-auth { flex-direction: column; width: 80%; margin-top: 20px; }
+    .btn-nav-contact, .btn-nav-home, .btn-login { width: 100%; text-align: center; }
 
     .form-wrapper {
         padding: 30px 20px;
         margin: 20px 10px;
         border-radius: 20px;
     }
-
-    .form-title { font-size: 1.8rem; }
 }
 
 /* ANIMAȚIE HAMBURGER */
