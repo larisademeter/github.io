@@ -1,41 +1,55 @@
 /* =========================================
-   1. VARIABILE & RESET
+   1. CONFIGURAȚIE & VARIABILE VIBRANTE
    ========================================= */
 :root {
-    --primary: #8b5cf6;       /* Mov */
-    --secondary: #ec4899;     /* Roz */
-    --turquoise: #06b6d4;     /* Turcoaz */
-    --header-bg: #f5f3ff;     /* Lavandă Pastel */
+    --primary: #8b5cf6;       /* Mov Electric */
+    --secondary: #ec4899;     /* Roz Neon */
+    --turquoise: #06b6d4;     /* Turcoaz/Cyan */
+    --header-bg: #f5f3ff;     /* Lavandă Pastel pentru Header */
+    --body-bg: #ffffff;
     --dark-text: #1e1b4b;
     --light-text: #64748b;
     --white: #ffffff;
     --grad-vibrant: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
-    --transition: 0.3s ease;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-vibrant: 0 10px 25px rgba(139, 92, 246, 0.2);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    color: var(--dark-text);
-    background-color: var(--white);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--body-bg);
     overflow-x: hidden;
 }
 
-.container { width: 90%; max-width: 1150px; margin: auto; }
+.container { 
+    width: 90%; 
+    max-width: 1150px; 
+    margin: auto; 
+}
 
 /* =========================================
-   2. HEADER & NAV (PASTEL & COMPACT)
+   2. HEADER COMPACT & PASTEL
    ========================================= */
 header {
     background: var(--header-bg);
-    padding: 10px 0;
+    padding: 0.6rem 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    z-index: 1100;
+    box-shadow: var(--shadow-soft);
 }
 
 .header-content {
@@ -45,30 +59,43 @@ header {
 }
 
 .logo { 
-    height: 90px; /* Logo mare cerut */
+    height: 90px; /* Dimensiune generoasă pentru lizibilitate */
     width: auto;
     display: block;
+    transition: var(--transition);
 }
 
-.main-nav { display: flex; align-items: center; gap: 20px; }
+.main-nav { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
 
 .main-nav a {
     text-decoration: none;
     color: var(--primary);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: var(--transition);
 }
 
-.main-nav a:hover { color: var(--secondary); }
+.main-nav a:hover { 
+    color: var(--secondary); 
+}
 
-.nav-auth { display: flex; align-items: center; gap: 15px; }
+.nav-auth { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
 
 .btn-login {
     border: 2px solid var(--primary);
     padding: 8px 20px;
     border-radius: 50px;
+    color: var(--primary) !important;
 }
 
 .btn-nav-contact {
@@ -87,9 +114,11 @@ header {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1200;
 }
 
-.menu-toggle .bar {
+.menu-toggle span {
+    display: block;
     width: 25px;
     height: 3px;
     background: var(--primary);
@@ -98,7 +127,7 @@ header {
 }
 
 /* =========================================
-   3. HERO SECTION (BUTON COLORAT)
+   3. HERO SECTION (PAGINA START)
    ========================================= */
 .hero-vibrance {
     padding: 100px 0;
@@ -109,10 +138,10 @@ header {
 .hero-title {
     font-size: 3.2rem;
     font-weight: 800;
+    margin-bottom: 20px;
     background: var(--grad-vibrant);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
 }
 
 .hero-subtitle {
@@ -131,41 +160,50 @@ header {
     border-radius: 50px;
     font-weight: 700;
     font-size: 1.1rem;
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    box-shadow: var(--shadow-vibrant);
     transition: var(--transition);
 }
 
-.btn-hero:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4); }
+.btn-hero:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4); 
+}
 
 /* =========================================
    4. SERVICII (CĂSUȚE/CARDURI)
    ========================================= */
-.section { padding: 80px 0; text-align: center; }
+.section { 
+    padding: 80px 0; 
+    text-align: center; 
+}
 
-h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+h2 { 
+    font-size: 2.5rem; 
+    color: var(--primary); 
+    margin-bottom: 10px; 
+}
 
 .divider {
     width: 60px;
     height: 4px;
     background: var(--secondary);
     margin: 0 auto 40px;
+    border-radius: 10px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 20px;
 }
 
 .card {
     background: var(--white);
-    padding: 45px 30px;
+    padding: 50px 30px;
     border-radius: 30px;
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-soft);
     border: 1px solid #f1f5f9;
     transition: var(--transition);
-    text-align: center;
 }
 
 .card:hover { 
@@ -178,31 +216,141 @@ h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
 .card p { font-size: 1rem; color: var(--light-text); }
 
 /* Accentări subtile fundal carduri */
-.card-accent-1 { background: linear-gradient(to bottom, #ffffff, #fbfaff); }
-.card-accent-2 { background: linear-gradient(to bottom, #ffffff, #fdf2f8); }
-.card-accent-3 { background: linear-gradient(to bottom, #ffffff, #f0fdfa); }
+.card-accent-1 { background: linear-gradient(180deg, #ffffff, #fbfaff); }
+.card-accent-2 { background: linear-gradient(180deg, #ffffff, #fdf2f8); }
+.card-accent-3 { background: linear-gradient(180deg, #ffffff, #f0fdfa); }
 
 /* =========================================
-   5. ECHIPA & FOOTER
+   5. CONTACT PAGE (SPECIALIZAT)
    ========================================= */
-.about-highlight { background: #fdfbff; }
-.about-highlight h2 { background: var(--grad-vibrant); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.bg-contact {
+    background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.form-wrapper {
+    max-width: 650px;
+    margin: 40px auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.05);
+}
+
+.form-title {
+    background: var(--grad-vibrant);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.subtitle-form {
+    border-left: 5px solid var(--turquoise);
+    padding-left: 15px;
+    margin-bottom: 35px;
+    color: var(--light-text);
+    font-weight: 500;
+    text-align: left;
+}
+
+.form-group { 
+    margin-bottom: 25px; 
+    text-align: left; 
+}
+
+/* SPAȚIEREA CERUTĂ SUB LABEL */
+.form-group label {
+    display: block;
+    margin-bottom: 12px; 
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #f1f5f9;
+    border-radius: 15px;
+    background-color: #f8faff;
+    font-family: inherit;
+    font-size: 16px; /* Previne zoom-ul pe iOS */
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--turquoise);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
+}
+
+.optional {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 18px;
+    background: var(--grad-vibrant);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-vibrant);
+}
+
+.btn-full:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* =========================================
+   6. ECHIPA & FOOTER
+   ========================================= */
+.about-highlight { 
+    background: #fdfbff; 
+}
+
+.about-highlight h2 { 
+    background: var(--grad-vibrant); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
 
 footer {
     background: var(--dark-text);
     color: white;
     padding: 50px 0;
     text-align: center;
+    font-size: 0.85rem;
 }
 
 /* =========================================
-   6. RESPONSIVE (PENTRU TELEFON)
+   7. RESPONSIVE (PENTRU TELEFON)
    ========================================= */
 @media (max-width: 768px) {
-    .logo { height: 75px; } /* Logo vizibil pe mobil */
+    .logo { height: 75px; }
+    
     .hero-title { font-size: 2.2rem; }
     
-    .menu-toggle { display: flex; } /* Apare hamburgerul */
+    .menu-toggle { display: flex; }
 
     .main-nav {
         position: fixed;
@@ -218,11 +366,28 @@ footer {
     }
 
     .main-nav.active { right: 0; }
-    .nav-auth { flex-direction: column; width: 80%; }
-    .btn-nav-contact, .btn-login { width: 100%; text-align: center; }
+    
+    .nav-auth { 
+        flex-direction: column; 
+        width: 80%; 
+        margin-top: 20px;
+    }
+    
+    .btn-nav-contact, .btn-login { 
+        width: 100%; 
+        text-align: center; 
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+        margin: 20px 10px;
+        border-radius: 20px;
+    }
+
+    .form-title { font-size: 1.8rem; }
 }
 
-/* Animație Hamburger */
-.menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-.menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* ANIMAȚIE HAMBURGER */
+.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
