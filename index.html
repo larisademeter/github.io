@@ -3,64 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>L.D. Service Medical</title>
+  <title>L.D. Service Medical | Profesionalism în Mentenanță</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container header-content">
-      <a href="#despre" class="brand" aria-label="L.D. Service Medical - acasă">
-        <img src="logo.png" alt="Sigla L.D. Service Medical" class="logo" />
+      <a href="#" class="brand">
+        <img src="logo.png" alt="L.D. Service Medical" class="logo" />
       </a>
-
-      <nav class="main-nav" aria-label="Meniu principal">
+      <nav class="main-nav">
         <a href="#despre">Despre</a>
         <a href="#servicii">Servicii</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-nav">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO (fără imagine) -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
+  <main>
+    <section class="hero">
+      <div class="container">
         <h1>L.D. Service Medical</h1>
-        <p>Servicii profesionale de întreținere și reparații pentru aparatură medicală.</p>
-        <a href="#contact" class="btn">Contactează-ne</a>
+        <p>Expertiză tehnică pentru siguranța actului medical. Mentenanță și reparații profesionale.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn">Solicită Intervenție</a>
+          <a href="#servicii" class="btn btn-outline">Vezi Servicii</a>
+        </div>
       </div>
-      <!-- Fără <img> aici, ca să nu mai apară logo mare -->
-    </div>
-  </section>
+    </section>
 
-  <!-- DESPRE -->
-  <section id="despre" class="section">
-    <div class="container">
-      <h2>Despre noi</h2>
-      <p>
-        Suntem specializați în mentenanță, calibrare și reparații pentru aparatură medicală.
-        Oferim servicii rapide și profesionale, adaptate nevoilor fiecărei clinici.
-      </p>
-    </div>
-  </section>
+    <section id="despre" class="section">
+      <div class="container">
+        <h2>Despre noi</h2>
+        <div class="divider"></div>
+        <p class="section-text">
+          Suntem partenerul dumneavoastră de încredere în menținerea funcționalității echipamentelor medicale. 
+          Oferim soluții rapide de diagnoză, calibrare și reparații, respectând cele mai înalte standarde de calitate.
+        </p>
+      </div>
+    </section>
 
-  <!-- SERVICII -->
-  <section id="servicii" class="section">
-    <div class="container">
-      <h2>Serviciile noastre</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Diagnoză &amp; Reparații</h3>
-          <p>Identificarea rapidă a defecțiunilor și remediere eficientă.</p>
+    <section id="servicii" class="section bg-light">
+      <div class="container">
+        <h2>Serviciile noastre</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Diagnoză & Reparații</h3>
+            <p>Intervenții rapide pentru minimizarea timpului de inactivitate a aparaturii.</p>
+          </article>
+          <article class="card">
+            <h3>Mentenanță Preventivă</h3>
+            <p>Verificări periodice pentru a preveni defecțiunile costisitoare și neprevăzute.</p>
+          </article>
+          <article class="card">
+            <h3>Consultanță Tehnică</h3>
+            <p>Suport specializat pentru achiziția și instalarea noilor echipamente.</p>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <h3>Mentenanță Preventivă</h3>
-          <p>Întreținere periodică pentru prevenirea defectelor majore.</p>
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Suntem aici să vă ajutăm. Contactați-ne pentru o programare.</p>
+        <div class="contact-info">
+          <p><strong>Telefon:</strong> 07xx xxx xxx</p>
+          <p><strong>Email:</strong> office@ldservice.ro</p>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="card">
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 L.D. Service Medical. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
