@@ -41,7 +41,7 @@ body {
 }
 
 /* =========================================
-   2. HEADER COMPACT & PASTEL
+   2. HEADER COMPACT & PASTEL (MĂRIT LOGO)
    ========================================= */
 header {
     background: var(--header-bg);
@@ -59,7 +59,7 @@ header {
 }
 
 .logo { 
-    height: 90px; /* Logo mare pentru lizibilitate */
+    height: 90px; /* Logo mare pentru desktop */
     width: auto;
     display: block;
     transition: var(--transition);
@@ -98,28 +98,38 @@ header {
     color: var(--primary) !important;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.85rem;
 }
 
-/* BUTOANELE VIBRANTE (CONTACT ȘI ACASĂ) */
-.btn-nav-contact, .btn-nav-home {
+/* BUTOANELE VIBRANTE (CONTACT, ACASĂ, HERO) */
+.btn-nav-contact, .btn-nav-home, .btn-hero, .btn-full {
     background: var(--grad-vibrant);
     color: white !important;
-    padding: 10px 25px;
-    border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+    border-radius: 50px;
+    box-shadow: var(--shadow-vibrant);
     transition: var(--transition);
+    border: none;
+    cursor: pointer;
     display: inline-block;
 }
 
-.btn-nav-contact:hover, .btn-nav-home:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+.btn-nav-contact, .btn-nav-home {
+    padding: 10px 25px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.btn-hero {
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.btn-hero:hover, .btn-nav-home:hover, .btn-nav-contact:hover {
+    transform: translateY(-3px);
     filter: brightness(1.1);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
 }
 
 /* BUTON MOBIL (HAMBURGER) */
@@ -143,7 +153,7 @@ header {
 }
 
 /* =========================================
-   3. HERO SECTION (PAGINA START)
+   3. SECȚIUNI PAGINA START (CARDURI)
    ========================================= */
 .hero-vibrance {
     padding: 100px 0;
@@ -163,48 +173,19 @@ header {
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto 10px;
     color: var(--light-text);
 }
 
-.btn-hero {
-    display: inline-block;
-    padding: 18px 45px;
-    background: var(--grad-vibrant);
-    color: white !important;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: var(--shadow-vibrant);
-    transition: var(--transition);
-}
+.section { padding: 80px 0; text-align: center; }
 
-.btn-hero:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4); 
-}
-
-/* =========================================
-   4. SERVICII (CĂSUȚE/CARDURI)
-   ========================================= */
-.section { 
-    padding: 80px 0; 
-    text-align: center; 
-}
-
-h2 { 
-    font-size: 2.5rem; 
-    color: var(--primary); 
-    margin-bottom: 10px; 
-}
+h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
 
 .divider {
     width: 60px;
     height: 4px;
     background: var(--secondary);
     margin: 0 auto 40px;
-    border-radius: 10px;
 }
 
 .grid {
@@ -229,18 +210,18 @@ h2 {
 
 .card-icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
 .card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
-.card p { font-size: 1rem; color: var(--light-text); }
 
+/* Fundaluri Carduri */
 .card-accent-1 { background: linear-gradient(180deg, #ffffff, #fbfaff); }
 .card-accent-2 { background: linear-gradient(180deg, #ffffff, #fdf2f8); }
 .card-accent-3 { background: linear-gradient(180deg, #ffffff, #f0fdfa); }
 
 /* =========================================
-   5. CONTACT PAGE (SPECIALIZAT)
+   4. PAGINA CONTACT (SPAȚIERE & CULOARE)
    ========================================= */
-.bg-contact {
+.bg-contact, .bg-login {
     background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
 }
@@ -252,7 +233,6 @@ h2 {
     padding: 50px;
     border-radius: 40px;
     box-shadow: 0 20px 50px rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.05);
 }
 
 .form-title {
@@ -262,7 +242,6 @@ h2 {
     font-weight: 800;
     font-size: 2.2rem;
     margin-bottom: 10px;
-    text-align: left;
 }
 
 .subtitle-form {
@@ -270,98 +249,87 @@ h2 {
     padding-left: 15px;
     margin-bottom: 35px;
     color: var(--light-text);
-    font-weight: 500;
-    text-align: left;
 }
 
-.form-group { 
-    margin-bottom: 25px; 
-    text-align: left; 
-}
+.form-group { margin-bottom: 25px; text-align: left; }
 
-/* SPAȚIERE SUB LABEL */
+/* SPAȚIEREA SUB LABEL */
 .form-group label {
     display: block;
     margin-bottom: 12px; 
     font-weight: 700;
     color: var(--primary);
-    font-size: 0.95rem;
 }
 
-.form-group input, 
-.form-group select, 
-.form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
     width: 100%;
     padding: 15px 20px;
     border: 2px solid #f1f5f9;
     border-radius: 15px;
     background-color: #f8faff;
-    font-family: inherit;
-    font-size: 16px;
+    font-size: 16px; /* Fix zoom iPhone */
     transition: var(--transition);
 }
 
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--turquoise);
     background-color: #fff;
     box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.1);
 }
 
-.optional {
-    color: #94a3b8;
-    font-weight: 400;
-    font-size: 0.8rem;
-    margin-left: 5px;
-}
-
-.btn-full {
-    width: 100%;
-    padding: 18px;
-    background: var(--grad-vibrant);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-vibrant);
-}
+.btn-full { width: 100%; padding: 18px; font-size: 1.1rem; }
 
 /* =========================================
-   6. ECHIPA & FOOTER
+   5. PAGINA LOG IN (SPLIT DESIGN)
    ========================================= */
-.about-highlight { 
-    background: #fdfbff; 
-    padding: 80px 0;
+.login-split {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background: var(--white);
+    border-radius: 40px;
+    box-shadow: 0 30px 70px rgba(139, 92, 246, 0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.login-visual {
+    background: var(--grad-vibrant);
+    color: var(--white);
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.about-highlight h2 { 
-    background: var(--grad-vibrant); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
+.visual-icon { font-size: 5rem; margin-bottom: 20px; display: block; }
+.login-form-panel { padding: 60px; }
+.forgot-link { color: var(--turquoise); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+
+/* =========================================
+   6. FOOTER & ECHIPA
+   ========================================= */
+.about-highlight { background: #fdfbff; padding: 80px 0; text-align: center; }
+.about-highlight h2 { background: var(--grad-vibrant); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 footer {
     background: var(--dark-text);
     color: white;
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
     font-size: 0.85rem;
 }
 
 /* =========================================
-   7. RESPONSIVE (PENTRU TELEFON)
+   7. RESPONSIVE (TELEFON)
    ========================================= */
 @media (max-width: 768px) {
-    .logo { height: 75px; }
+    .logo { height: 75px; } /* Logo mai mare pe mobil */
+    
     .hero-title { font-size: 2.2rem; }
+    
     .menu-toggle { display: flex; }
 
     .main-nav {
@@ -378,14 +346,15 @@ footer {
     }
 
     .main-nav.active { right: 0; }
-    .nav-auth { flex-direction: column; width: 80%; margin-top: 20px; }
-    .btn-nav-contact, .btn-nav-home, .btn-login { width: 100%; text-align: center; }
+    
+    .nav-auth { flex-direction: column; width: 80%; }
+    
+    .btn-nav-contact, .btn-nav-home, .btn-login { width: 100%; text-align: center; margin-top: 10px; }
 
-    .form-wrapper {
-        padding: 30px 20px;
-        margin: 20px 10px;
-        border-radius: 20px;
-    }
+    .form-wrapper, .login-form-panel { padding: 30px 20px; border-radius: 20px; }
+    
+    .login-split { grid-template-columns: 1fr; }
+    .login-visual { padding: 40px; }
 }
 
 /* ANIMAȚIE HAMBURGER */
