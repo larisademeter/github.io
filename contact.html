@@ -134,19 +134,20 @@
                         status: "Nouă"
                     });
 
-                    // Notificăm utilizatorul
+                    // 1. Notificăm utilizatorul
                     alert("Succes! Solicitarea ta a fost trimisă.");
                     
-                    // Resetăm formularul
+                    // 2. Resetăm formularul
                     contactForm.reset();
 
-                    // Redirecționăm către pagina principală după ce apasă OK
-                    window.location.href = "index.html"; 
+                    // 3. Redirecționăm forțat după un mic delay (500ms)
+                    setTimeout(() => {
+                        window.location.replace("index.html");
+                    }, 500);
 
                 } catch (error) {
                     console.error("Eroare:", error);
                     alert("Eroare la trimitere. Verifică setările Firestore Rules.");
-                } finally {
                     submitBtn.innerText = "Trimite Solicitarea";
                     submitBtn.disabled = false;
                 }
