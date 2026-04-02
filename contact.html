@@ -35,7 +35,6 @@
                 <p class="subtitle-form">Un tehnician va prelua solicitarea ta în cel mai scurt timp posibil.</p>
                 
                 <form id="contactForm" class="contact-form">
-                    
                     <div class="form-group">
                         <label for="clinica">Nume Clinică / Cabinet</label>
                         <input type="text" id="clinica" name="clinica" placeholder="Ex: Spitalul Municipal..." required>
@@ -87,11 +86,9 @@
     </footer>
 
     <script type="module">
-        // Importăm SDK-urile Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // CONFIGURAȚIA TA OFICIALĂ
         const firebaseConfig = {
             apiKey: "AIzaSyDJkNtiqJv5MXUe1XNPJf4lBI3KSl9ns0w",
             authDomain: "proiect-de-diploma-larisa.firebaseapp.com",
@@ -102,51 +99,52 @@
             measurementId: "G-F0HM8NZCJ8"
         };
 
-        // Inițializăm Firebase și Baza de Date
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
         // Meniul Mobile
         const toggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.main-nav');
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
+        if(toggle && nav) {
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
 
-        // Logica pentru Formular
+        // Trimitere Formular
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
 
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Schimbăm starea butonului
-            submitBtn.innerText = "Se trimite...";
-            submitBtn.disabled = true;
+        if(contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                submitBtn.innerText = "Se trimite...";
+                submitBtn.disabled = true;
 
-            try {
-                // Trimitem datele în Firestore
-                await addDoc(collection(db, "interventii"), {
-                    clinica: document.getElementById('clinica').value,
-                    sectie: document.getElementById('sectie').value,
-                    motiv: document.getElementById('motiv').value,
-                    echipament: document.getElementById('echipament').value,
-                    mesaj: document.getElementById('mesaj').value,
-                    data_solicitare: new Date().toLocaleString('ro-RO'),
-                    status: "Nouă"
-                });
+                try {
+                    await addDoc(collection(db, "interventii"), {
+                        clinica: document.getElementById('clinica').value,
+                        sectie: document.getElementById('sectie').value,
+                        motiv: document.getElementById('motiv').value,
+                        echipament: document.getElementById('echipament').value,
+                        mesaj: document.getElementById('mesaj').value,
+                        data_solicitare: new Date().toLocaleString('ro-RO'),
+                        status: "Nouă"
+                    });
 
-                alert("Succes! Solicitarea ta a fost trimisă către tehnicienii noștri.");
-                contactForm.reset();
-            } catch (error) {
-                console.error("Eroare Firebase:", error);
-                alert("Ups! Ceva nu a mers bine. Verifică conexiunea la internet.");
-            } finally {
-                submitBtn.innerText = "Trimite Solicitarea";
-                submitBtn.disabled = false;
-            }
-        });
+                    alert("Succes! Solicitarea ta a fost trimisă.");
+                    contactForm.reset();
+                } catch (error) {
+                    console.error("Eroare:", error);
+                    alert("Eroare la trimitere. Verifică setările Firestore Rules.");
+                } finally {
+                    submitBtn.innerText = "Trimite Solicitarea";
+                    submitBtn.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
