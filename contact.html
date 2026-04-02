@@ -134,8 +134,15 @@
                         status: "Nouă"
                     });
 
+                    // Notificăm utilizatorul
                     alert("Succes! Solicitarea ta a fost trimisă.");
+                    
+                    // Resetăm formularul
                     contactForm.reset();
+
+                    // Redirecționăm către pagina principală după ce apasă OK
+                    window.location.href = "index.html"; 
+
                 } catch (error) {
                     console.error("Eroare:", error);
                     alert("Eroare la trimitere. Verifică setările Firestore Rules.");
